@@ -39,7 +39,7 @@ public class ITRIEDOpmode extends LinearOpMode {
 
     /*
 
-    Iddentify Motors here
+    Identify Motors here
 
     4-6 motors, we may have 2 servos for the claws, I think. I will set the code down below
     as an option, just take the "//" in front of them if we do end up using them
