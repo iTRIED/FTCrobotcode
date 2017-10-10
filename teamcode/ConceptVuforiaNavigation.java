@@ -117,7 +117,7 @@ public class ConceptVuforiaNavigation extends LinearOpMode {
          * Once you've obtained a license key, copy the string from the Vuforia web site
          * and paste it in to your code onthe next line, between the double quotes.
          */
-        parameters.vuforiaLicenseKey = "AT7ekX7/////AAAAGV4smkHU+0WsqXScqsEufoda5LDkVLSipz2T3KDhuTzaSuPk9lId4i8hR4bFjQ2hFZE0n3JVNd1T+wnmyVeBJA9H1g9QA9IcIolCqDFRXoPPL6jNU1bEIy5CdWtTJ+xUmGwQJxBrwJZCDlzO0IvVx3/ZRnBBA5x23KVSGd7sPc3iSSoqlo3f2TKSIHjyIDM6vVY4yxNBhbdRtwZUgfc375OsN/yzqju1f9IqrHg4HmlVBrCBD/NO40ieAyQNDMbm0jraqAYd47ZcaFBOfhPGZBBBQIIqi6t7mWYWEe3wKVslCdbLB0j3uoBBTeKqzIIkRAPLgp1r28N5F1KEcDkmV/Wf/2784moHSJ0h/e4bQVcC";
+        parameters.vuforiaLicenseKey = "Ae+Gqlb/////AAAAGYf4XGBNOEloqlrnHBbnlFoGByqyNVARJn/Mpj/Ut4TUzDUBptj6SJxPRGLUF2JeeElJdKZuiz9hjmGu/4qEoL+rGr78sss8ooo5Ldi4syXrBnJFL/vPl3HIu4nk/lJubVW8Gfp1OGSTjSltxh1YnJKS0w7Fs2vawKEkekHJ2brr3G7AP06aezvp9g/H0ZzyH39iUdc9akRJA7NnR5/0vr8beziJBq27dbEnf5bYzsQaTFgFLNf39rJISglUk4arJXWBOSsID+IcOn0tDhb2u4WXH1DeinIROy8WxYDMaj/Nq4xQwR0EodZcLtnNZnFazxUl/ueCjJEa2ZeZGgdgU4WTBKECWvafWU51TCYwNWqi";
 
 
         // Jaizelle's Note:
