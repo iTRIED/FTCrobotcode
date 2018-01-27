@@ -54,12 +54,12 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwareK9bot;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="ITRIEDbot: Telop Tank", group="ITRIEDbot")
+@TeleOp(name="ITRIED", group="ITRIEDbot")
 //@Disabled
 public class ITRIEDbotTeleopTank extends LinearOpMode {
 
     /* Declare OpMode members. */
-    HardwareITRIEDbot   robot           = new HardwareITRIEDbot();              // Using ITRIED shardware
+    HardwareITRIEDbot   robot           = new HardwareITRIEDbot();              // Using ITRIED hardware
    // double          armPosition     = robot.ARM_HOME;                   // Servo safe position
     double          clawPosition    = robot.CLAW_HOME;                  // Servo safe position
     final double    CLAW_SPEED      = 0.01 ;                            // sets rate to move servo
@@ -76,7 +76,7 @@ public class ITRIEDbotTeleopTank extends LinearOpMode {
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Hello Driver");    //
+        telemetry.addData("Status", "Initialized");    //
         telemetry.update();
 
         // Wait for the game to start (driver presses PLAY)
@@ -84,6 +84,8 @@ public class ITRIEDbotTeleopTank extends LinearOpMode {
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
+            telemetry.addData("Status", "Running");
+            telemetry.update();
 
             // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
             left = -gamepad1.left_stick_y;
@@ -91,11 +93,12 @@ public class ITRIEDbotTeleopTank extends LinearOpMode {
             robot.leftDrive.setPower(left);
             robot.rightDrive.setPower(right);
 
-           if {gamepad1.b} {
+            if (gamepad1.b);
                 robot.ArmMotor.setPower(-1);
-            } else if {gamepad1.a} {
+
+            if (gamepad1.a);
                robot.ArmMotor.setPower(0);
-            }
+
 
             // Use gamepad X & B to open and close the claw
             if (gamepad1.left_bumper)

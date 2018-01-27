@@ -57,16 +57,16 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="ITRIED Autonomous", group="Pushbot")
-@Disabled
+@Autonomous(name="ITRIED Autonomous", group="ITRIEDbot")
+//@Disabled
 public class ITRIEDAutonomous extends LinearOpMode {
 
     /* Declare OpMode members. */
-    HardwareITRIEDbot         robot   = new HardwareITRIEDbot();   // Using ITRIED's hardware
+    HardwareITRIEDbot        robot   = new HardwareITRIEDbot();   // Using ITRIED's hardware
     private ElapsedTime     runtime = new ElapsedTime();
 
 
-   // static final double     FORWARD_SPEED = 0.6;
+    //static final double     FORWARD_SPEED = 0.6;
     //static final double     TURN_SPEED    = 0.5;
 
     @Override
@@ -87,15 +87,15 @@ public class ITRIEDAutonomous extends LinearOpMode {
 
         robot.leftDrive.setPower(1); // Forward
         robot.rightDrive.setPower(1); //Forward
-        sleep (1000)
+        sleep (1000);
 
         robot.leftDrive.setPower(-.5); // Reverse
         robot.rightDrive.setPower(.5); //Forward
-        sleep (1000)
+        sleep (1000);
 
         robot.leftDrive.setPower(1); // Forward
         robot.rightDrive.setPower(1); //Forward
-        sleep (1000)
+        sleep (1000);
 
         /*
         sleep(1000); //Stay here in the code for 1 sec, don't move on to the next instructions
