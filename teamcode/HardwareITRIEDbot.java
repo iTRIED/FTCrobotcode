@@ -60,16 +60,14 @@ public class HardwareITRIEDbot
     /* Public OpMode members. */
     public DcMotor  leftDrive   = null;
     public DcMotor  rightDrive  = null;
-    public DcMotor  ArmMotor  = null;
-    public Servo    leftclaw        = null;
-    public Servo    rightclaw        = null;
+    public DcMotor  ArmMotor    = null;
+    public Servo    leftclaw    = null;
+    public Servo    rightclaw   = null;
 
     //public final static double ARM_HOME = 0.2;
-    public final static double CLAW_HOME = 0.2;
-   // public final static double ARM_MIN_RANGE  = 0.20;
-    //public final static double ARM_MAX_RANGE  = 0.90;
-    public final static double CLAW_MIN_RANGE  = 0.20;
-    public final static double CLAW_MAX_RANGE  = 0.7;
+    public final static double CLAW_HOME = 0.4;
+    public final static double CLAW_MIN_RANGE  = -0.70;
+    public final static double CLAW_MAX_RANGE  = 0.8;
 
     /* Local OpMode members. */
     HardwareMap hwMap  = null;
@@ -104,7 +102,7 @@ public class HardwareITRIEDbot
         ArmMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        leftclaw = hwMap.get(Servo.class, "left_claw");
+        leftclaw  = hwMap.get(Servo.class, "left_claw");
         rightclaw = hwMap.get(Servo.class, "right_claw");
         leftclaw.setPosition(CLAW_HOME);
         rightclaw.setPosition(CLAW_HOME);

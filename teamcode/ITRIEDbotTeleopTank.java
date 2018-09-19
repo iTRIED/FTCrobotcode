@@ -69,6 +69,7 @@ public class ITRIEDbotTeleopTank extends LinearOpMode {
     public void runOpMode() {
         double left;
         double right;
+        double servo;
 
         /* Initialize the hardware variables.
          * The init() method of the hardware class does all the work here
@@ -92,27 +93,52 @@ public class ITRIEDbotTeleopTank extends LinearOpMode {
             right = -gamepad1.right_stick_y;
             robot.leftDrive.setPower(left);
             robot.rightDrive.setPower(right);
+            robot.ArmMotor.setPower(gamepad1.right_trigger -gamepad1.left_trigger);
 
-            if (gamepad1.b);
+
+           /* if (gamepad1.b);
                 robot.ArmMotor.setPower(-1);
 
             if (gamepad1.a);
-               robot.ArmMotor.setPower(0);
+               robot.ArmMotor.setPower(0); */
+            //robot.leftclaw.setPosition(gamepad1.left_bumper -gamepad1.right_bumper);
+            //robot.rightclaw.setPosition(gamepad1.left_bumper -gamepad1.right_bumper);
 
+            // Use gamepad left & right Bumpers to open and close the claw
+            /*if (gamepad1.right_bumper)
+                clawOffset += CLAW_SPEED;
+            else if (gamepad1.left_bumper)
+                clawOffset -= CLAW_SPEED;
 
-            // Use gamepad X & B to open and close the claw
-            if (gamepad1.left_bumper)
-                clawPosition += CLAW_SPEED;
-            else if (gamepad1.right_bumper)
-                clawPosition -= CLAW_SPEED;
+            // Move both servos to new position.  Assume servos are mirror image of each other.
+            clawOffset = Range.clip(clawOffset, -0.5, 0.5);
+            robot.leftClaw.setPosition(robot.MID_SERVO + clawOffset);
+            robot.rightClaw.setPosition(robot.MID_SERVO - clawOffset);
+
+            // Use gamepad Trigger & Trigger to open and close the claw
+            if (gamepad1.left_bumper) {
+
+            }
+
+             if (gamepad1.right_bumper) {
+                 robot.leftclaw.setPosition(-1);
+                 robot.rightclaw.setPosition(-1);
+             }
 
             // Move both servos to new position.
             /*armPosition  = Range.clip(armPosition, robot.ARM_MIN_RANGE, robot.ARM_MAX_RANGE);
             robot.arm.setPosition(armPosition);
+
+
             */
+            if (gamepad1.right_bumper)
+                clawPosition += CLAW_SPEED;
+            else if (gamepad1.left_bumper)
+                clawPosition -= CLAW_SPEED;
+
             clawPosition = Range.clip(clawPosition, robot.CLAW_MIN_RANGE, robot.CLAW_MAX_RANGE);
-            robot.leftclaw.setPosition(clawPosition);
-            robot.rightclaw.setPosition(clawPosition);
+            robot.leftclaw.setPosition(robot.CLAW_HOME + clawPosition);
+            robot.rightclaw.setPosition(robot.CLAW_HOME - clawPosition);
 
             // Send telemetry message to signify robot running;
             telemetry.addData("claw",  "%.2f", clawPosition);

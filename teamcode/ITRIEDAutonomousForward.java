@@ -30,11 +30,8 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
-
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 /**
  * This file illustrates the concept of driving a path based on time.
@@ -57,12 +54,12 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="ITRIED Autonomous Left", group="ITRIEDbot")
+@Autonomous(name="ITRIED Autonomous Forward", group="ITRIEDbot")
 //@Disabled
-public class ITRIEDAutonomous extends LinearOpMode {
+public class ITRIEDAutonomousForward extends LinearOpMode {
 
     /* Declare OpMode members. */
-    HardwareITRIEDbot        robot   = new HardwareITRIEDbot();   // Using ITRIED's hardware
+    HardwareITRIEDbot       robot   = new HardwareITRIEDbot();   // Using ITRIED's hardware
     private ElapsedTime     runtime = new ElapsedTime();
 
 
@@ -87,34 +84,30 @@ public class ITRIEDAutonomous extends LinearOpMode {
 
         robot.leftDrive.setPower(1); // Forward
         robot.rightDrive.setPower(1); //Forward
-        sleep (1000);
+        sleep (2000);
 
-        //Turn Left
-        robot.leftDrive.setPower(-.5); // Reverse
-        robot.rightDrive.setPower(.5); //Forward
-        sleep (1000);
-
-        robot.leftDrive.setPower(1); // Forward
-        robot.rightDrive.setPower(1); //Forward
-        sleep (1000);
+        //TO DRIVE BACKWARD
+        robot.leftDrive.setPower(-1); // Reverse
+        robot.rightDrive.setPower(-1); //Reverse
+        sleep (500);
 
 
         /*
         sleep(1000); //Stay here in the code for 1 sec, don't move on to the next instructions
 
-        TO DRIVE FORWARD
+        //TO DRIVE FORWARD
         robot.leftDrive.setPower(1); // Forward
         robot.rightDrive.setPower(1); //Forward
 
-        TO DRIVE BACKWARD
+        //TO DRIVE BACKWARD
         robot.leftDrive.setPower(-1); // Reverse
         robot.rightDrive.setPower(-1); //Reverse
 
-        TURN RIGHT
+        //TURN RIGHT
         robot.leftDrive.setPower(.5); // Forward
         robot.rightDrive.setPower(-.5); //Reverse
 
-        TURN LEFT
+        //TURN LEFT
         robot.leftDrive.setPower(-.5); // Reverse
         robot.rightDrive.setPower(.5); //Forward
 
